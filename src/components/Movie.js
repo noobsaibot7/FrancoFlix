@@ -14,7 +14,6 @@ import {useMovieFetch } from './hooks/useMovieFetch'
 
 const Movie =() => {
   
-
   const { movieId } = useParams();
   const[movie, error, loading] = useMovieFetch(movieId)
   
@@ -22,7 +21,7 @@ const Movie =() => {
   if(loading) return <Spinner/>
 
   return (
-    <>
+    <div>
       <Navigation movie={movie.original_title} />
       <MovieInfo movie={movie} />
       <MovieInfoBar 
@@ -35,7 +34,7 @@ const Movie =() => {
           movie.actors.map(actor=> <Actor key={actor.credit_id} actor={actor} /> )
         }
       </Grid>  
-    </>
+    </div>
   );
 };
 export default Movie;

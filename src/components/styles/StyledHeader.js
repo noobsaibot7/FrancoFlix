@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  position: fixed;
-  background: ${props => (props.themen ? "rgba(0, 0, 0, 1)" : "#1b1b1b")};
+  position:sticky;
+  top:0px;
+  border-top: 0px;
+  background-color: ${props => (props.themen ? "rgba(0, 0, 0, 1)" : "#414A4C")};
   padding: 0 20px;
   box-sizing: border-box;
-  transition: background-Color 1.24s ease-in-out;
+  transition: background-color 1.24s ease-in-out;
   width: 100%;
   height: 80px;
   display: flex;
   z-index: 10000;
-  margin: 0 auto;
   display: flex;
-  overflow: hidden;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;

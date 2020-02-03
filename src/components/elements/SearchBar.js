@@ -18,7 +18,7 @@ const SearchBar = ({ callback }) => {
     setState(value);
 
     timeOut.current = setTimeout(() => {
-      callback(value);
+      callback(value.trim());
     }, 500);
   };
 

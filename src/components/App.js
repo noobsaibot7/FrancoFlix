@@ -38,6 +38,7 @@ const App = () => {
     <>
       <Router>
         <Header changeMode={changeState} theme={mode} />
+        <>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -49,6 +50,7 @@ const App = () => {
             <Notfound />
           </Route>
         </Switch>
+        </>
       </Router>
       <GlobalStyle theme={mode} />
     </>

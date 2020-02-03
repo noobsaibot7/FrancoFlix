@@ -1,14 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import FontAwesome from 'react-fontawesome';
 import RMDBLogo from "../images/francoFlix.png";
-import TMDBLogo from "../images/tmdb_logo.svg";
+
 
 import {
   StyledHeader,
   StyledRMDBLogo,
-  StyledTMDBLogo
 } from "../styles/StyledHeader";
 import StyledSwitch from "../styles/StyledSwitch";
 
