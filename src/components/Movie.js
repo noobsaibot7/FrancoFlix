@@ -1,5 +1,4 @@
 import React from "react";
-import Styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 import Navigation from "./elements/Navigation";

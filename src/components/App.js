@@ -1,5 +1,4 @@
 import React, { useState , useEffect} from "react";
-import { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
@@ -14,7 +13,7 @@ const App = () => {
     function initialMode(){
       const isInStore = "mode" in window.localStorage;
       const defaultMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
-      console.log(isInStore, defaultMode);
+
   
       if(defaultMode){
         return defaultMode
@@ -25,7 +24,6 @@ const App = () => {
       }
   }
 
-  console.log(initialMode());
 
   const [mode, setMode] = useState(initialMode());
   const changeState = () => setMode(prevMode => !prevMode);
