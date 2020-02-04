@@ -31,7 +31,7 @@ export const useMovieFetch = movieId => {
 
   useEffect(() => {
     if (
-      movieId in localStorage &&
+      [movieId] in localStorage &&
       JSON.parse(localStorage[movieId]).length > 0
     ) {
       setMovie(JSON.parse(localStorage[movieId]));
