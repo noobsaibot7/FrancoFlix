@@ -30,10 +30,7 @@ export const useMovieFetch = movieId => {
   }, [movieId]);
 
   useEffect(() => {
-    if (
-      localStorage.movieId &&
-      JSON.parse(localStorage[movieId]).length > 0
-    ) {
+    if (localStorage[movieId] && JSON.parse(localStorage[movieId]).length > 0) {
       setMovie(JSON.parse(localStorage[movieId]));
       setLoading(false);
     } else {
@@ -42,8 +39,9 @@ export const useMovieFetch = movieId => {
   }, [fetchData, movieId]);
 
   useEffect(() => {
-    localStorage.setItem(movieId, JSON.stringify(movie));
-  }, [movieId, movie]);
+      localStorage.setItem(movieId, JSON.stringify(movie));
 
-  return [movie, error, loading];
+   }, [movieId, movie])
+  
+return [movie, error, loading];
 };
