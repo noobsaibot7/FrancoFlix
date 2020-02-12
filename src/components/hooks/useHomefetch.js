@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {POPULAR_BASE_URL } from "../../config";
 
 export const useHomeFetch = searchVal => {
@@ -6,11 +6,11 @@ export const useHomeFetch = searchVal => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const fetchMovies = async endpoint => {
+  const fetchMovies = useCallback(async endpoint => {
     setError(false);
     setLoading(true);
 
-    const loadMore = endpoint.search('page')
+    const loadMore = endpoint && endpoint.search('page')
 
     try {
       const result = await (await fetch(endpoint)).json();
@@ -24,12 +24,11 @@ export const useHomeFetch = searchVal => {
       
     } catch (e) {
       setError(true);
-      console.log(error);
     }
     finally{
       setLoading(false);
     }
-  }; 
+  }, [searchVal])
 
 
 
@@ -41,7 +40,7 @@ export const useHomeFetch = searchVal => {
       fetchMovies(POPULAR_BASE_URL);
     }
     
-  }, []);
+  }, [fetchMovies]);
 
   useEffect(()=>{
     if(!searchVal){
